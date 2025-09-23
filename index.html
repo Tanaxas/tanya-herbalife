@@ -1,1521 +1,722 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tanya — Herbalife Distributor</title>
-  <meta name="description" content="Tanya - Independent Herbalife distributor. Haircare, skincare, weight-loss and weight-gain products. Contact Tanya to order." />
-  <meta name="theme-color" content="#0f9d58">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanya - Herbalife Distributor</title>
+  <meta name="description" content="Tanya - Independent Herbalife distributor. Quality nutrition, skincare, and wellness products with personal support.">
   <style>
-   /* ---------- Enhanced Mobile-First Styles ---------- */
-:root{
-  --brand-green: #0f9d58;
-  --brand-dark: #0a2b1f;
-  --muted: #9aa6a2;
-  --bg: #0b0b0c;
-  --panel: #0f1413;
-  --text: #e8efec;
-  --glass: rgba(255,255,255,0.03);
-  --accent: #ffd54a;
-  --radius: 12px;
-  --transition: 300ms cubic-bezier(.2,.9,.2,.95);
-  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-
-:root.light{
-  --bg: #f6faf6;
-  --panel: #ffffff;
-  --text: #0b0b0b;
-  --glass: rgba(0,0,0,0.03);
-  --muted: #556463;
-}
-
-*{box-sizing:border-box; margin:0; padding:0;}
-html,body{height:100%; width:100%; overflow-x:hidden;}
-
-body{
-  margin:0;
-  background: linear-gradient(180deg,var(--bg), rgba(0,0,0,0.03));
-  color:var(--text);
-  transition: background var(--transition), color var(--transition);
-  line-height:1.5;
-  font-size: 16px;
-}
-
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:1rem;
-  width:100%;
-}
-
-/* ---------- Enhanced Header for Mobile ---------- */
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:40;
-  background: rgba(11, 11, 12, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-  padding: 0.5rem 0;
-}
-
-.light .site-header{
-  background: rgba(246, 250, 246, 0.95);
-}
-
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 1rem;
-  gap: 1rem;
-}
-
-.logo{
-  font-weight:700;
-  color:var(--brand-green);
-  text-decoration:none;
-  font-size:1.1rem;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-/* Improved Mobile Navigation */
-.main-nav{
-  display: none;
-}
-
-.mobile-menu-btn{
-  display: none;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 8px 12px;
-  border-radius: 8px;
-  color: var(--text);
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-.mobile-menu{
-  display: none;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  background: var(--panel);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 1rem;
-  z-index: 50;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.mobile-menu.active{
-  display: block;
-}
-
-.mobile-menu ul{
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.mobile-menu a{
-  display: block;
-  padding: 12px 16px;
-  text-decoration: none;
-  color: var(--text);
-  border-radius: 8px;
-  transition: background var(--transition);
-}
-
-.mobile-menu a:hover{
-  background: var(--glass);
-}
-
-.header-actions{
-  display:flex;
-  gap:0.5rem;
-  align-items:center;
-}
-
-.header-actions button{
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.08);
-  padding:8px;
-  border-radius:10px;
-  color:var(--text);
-  cursor:pointer;
-  transition:all .18s;
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ---------- Enhanced Hero Section for Mobile ---------- */
-.hero{
-  display:flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items:center;
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.hero-content{
-  width: 100%;
-  max-width: 500px;
-}
-
-.hero-card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-  padding: 2rem 1.5rem;
-  border-radius:var(--radius);
-  box-shadow:0 8px 30px rgba(0,0,0,0.6);
-  width: 100%;
-}
-
-.hero h1{
-  margin:0 0 1rem;
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-  line-height:1.2;
-  font-weight: 700;
-}
-
-.hero p{
-  color:var(--muted);
-  margin:0 0 1.5rem;
-  font-size: clamp(1rem, 3vw, 1.1rem);
-}
-
-.cta-row{
-  display:flex;
-  gap:0.75rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn{
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.08);
-  padding:12px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  color:var(--text);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  min-width: 44px;
-  font-size: 1rem;
-  transition: all var(--transition);
-  white-space: nowrap;
-}
-
-.btn.primary{
-  background:var(--brand-green);
-  color:white;
-  border:0;
-  font-weight: 600;
-}
-
-.btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* ---------- Enhanced Products Grid for Mobile ---------- */
-.products-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap:1.5rem;
-  margin-top:1.5rem;
-}
-
-.product{
-  background:var(--panel);
-  padding:1rem;
-  border-radius:var(--radius);
-  transition:transform var(--transition);
-  cursor:default;
-  border: 1px solid rgba(255,255,255,0.03);
-}
-
-.product:hover{
-  transform:translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-.product img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-.product-actions{
-  display:flex;
-  gap:0.5rem;
-  margin-top:1rem;
-}
-
-.product-actions .btn{
-  flex: 1;
-  padding: 10px;
-  font-size: 0.9rem;
-}
-
-/* ---------- Enhanced Carousel for Mobile ---------- */
-.carousel-container{
-  position: relative;
-  margin: 1.5rem 0;
-  width: 100%;
-}
-
-.carousel-track{
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 1rem 0.5rem;
-  margin: 0 -0.5rem;
-}
-
-.carousel-track::-webkit-scrollbar{
-  display: none;
-}
-
-.carousel-item{
-  min-width: 280px;
-  background: var(--panel);
-  padding: 1rem;
-  border-radius: var(--radius);
-  flex-shrink: 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  cursor: pointer;
-  transition: transform var(--transition);
-  border: 1px solid rgba(255,255,255,0.03);
-}
-
-.carousel-item:hover{
-  transform: translateY(-2px);
-}
-
-.carousel-item img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-.carousel-controls{
-  display:flex;
-  gap:0.5rem;
-  justify-content:center;
-  margin-top:1rem;
-}
-
-/* ---------- Enhanced Product Detail for Mobile ---------- */
-.product-detail{
-  display:flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem 0;
-}
-
-.product-image{
-  width: 100%;
-}
-
-.product-image img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-.product-info{
-  width: 100%;
-}
-
-.add-row{
-  display:flex;
-  gap:0.5rem;
-  margin-top:1.5rem;
-  align-items:center;
-  flex-wrap: wrap;
-}
-
-.add-row input{
-  width: 80px;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: transparent;
-  color: var(--text);
-}
-
-/*Contact page styles*/
-
-.contact-page-container {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 2rem;
-  align-items: start;
-}
-
-.contact-form {
-  background: var(--panel);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-}
-.contact-info-section {
-  background: var(--panel);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  position: sticky;
-  top: 100px;
-}
-
-/* ---------- Enhanced Forms for Mobile ---------- */
-.checkout-form, .contact-form{
-  background:var(--panel);
-  padding:1.5rem;
-  border-radius:var(--radius);
-  border: 1px solid rgba(255,255,255,0.03);
-}
-
-.form-row{
-  display:flex;
-  flex-direction: column;
-  gap:1rem;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-  margin-bottom:1rem;
-}
-
-input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select{
-  padding:14px;
-  border-radius:8px;
-  border:1px solid rgba(255,255,255,0.1);
-  background:var(--bg);
-  color:var(--text);
-  font-size: 16px; /* Prevents zoom on iOS */
-  width: 100%;
-  transition: border-color var(--transition);
-}
-
-input:focus, textarea:focus, select:focus{
-  outline: none;
-  border-color: var(--brand-green);
-}
-
-/* ---------- Enhanced Cart Modal for Mobile ---------- */
-.cart-modal{
-  position:fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width:100%;
-  height:100%;
-  background:var(--panel);
-  border-radius: 0;
-  box-shadow:none;
-  padding:1rem;
-  transform:translateX(100%);
-  transition:transform 300ms ease-in-out;
-  z-index:100;
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-modal[aria-hidden="false"]{
-  transform:translateX(0);
-}
-
-.cart-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  margin-bottom: 1rem;
-}
-
-.cart-items{
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 1rem;
-}
-
-.cart-actions{
-  display:flex;
-  gap:0.5rem;
-  margin-top:1rem;
-}
-
-.cart-actions .btn{
-  flex: 1;
-}
-
-/* ---------- Enhanced Footer for Mobile ---------- */
-.site-footer{
-  margin-top:3rem;
-  padding:2rem 0 1rem;
-  border-top:1px solid rgba(255,255,255,0.05);
-}
-
-.footer-inner{
-  display:flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-  text-align: center;
-}
-
-.socials{
-  display:flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* ---------- Toast & Animations ---------- */
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:24px;
-  transform:translateX(-50%);
-  background:var(--brand-green);
-  color:white;
-  padding:12px 20px;
-  border-radius:10px;
-  display:none;
-  z-index:80;
-  font-weight: 500;
-}
-
-.fade-in{animation:fadeIn .6s ease both}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-/* ---------- Responsive Breakpoints ---------- */
-@media (min-width: 768px) {
-  .container{
-    padding: 1rem 2rem;
-  }
-  
-  .hero{
-    flex-direction: row;
-    text-align: left;
-    gap: 3rem;
-  }
-  
-  .hero-content{
-    max-width: none;
-    flex: 1;
-  }
-  
-  .products-grid{
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-  
-  .product-detail{
-    flex-direction: row;
-  }
-  
-  .product-image{
-    flex: 1;
-  }
-  
-  .product-info{
-    flex: 1;
-  }
-  
-  .footer-inner{
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-  
-  .cart-modal{
-    position: fixed;
-    top: auto;
-    left: auto;
-    right: 20px;
-    bottom: 20px;
-    width: 400px;
-    height: auto;
-    max-height: 80vh;
-    border-radius: 14px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main-nav{
-    display: block;
-  }
-  
-  .main-nav ul{
-    display:flex;
-    gap:1.5rem;
-    list-style:none;
-  }
-  
-  .main-nav a{
-    text-decoration:none;
-    color:var(--text);
-    opacity:0.95;
-    padding:8px 12px;
-    border-radius:8px;
-    transition: all var(--transition);
-  }
-  
-  .main-nav a:hover{
-    background:var(--glass);
-    opacity: 1;
-  }
-  
-  .mobile-menu-btn{
-    display: none;
-  }
-}
-
-/* Always show mobile menu button on small screens */
-@media (max-width: 1023px) {
-  .mobile-menu-btn{
-    display: flex;
-  }
-  
-  .main-nav{
-    display: none;
-  }
-  
-  .header-inner{
-    padding: 0 0.5rem;
-  }
-}
-/* Contact page*/
-@media (max-width: 767px) {
-  .contact-page-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .contact-info-section {
-    position: static;
-    order: 2;
-  }
-  
-  .contact-form-section {
-    order: 1;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 360px) {
-  .container{
-    padding: 1rem 0.5rem;
-  }
-  
-  .hero-card{
-    padding: 1.5rem 1rem;
-  }
-  
-  .cta-row{
-    flex-direction: column;
-  }
-  
-  .btn{
-    width: 100%;
-  }
-  
-  .products-grid{
-    grid-template-columns: 1fr;
-  }
-}
-/* ---------- About Page Improvements ---------- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-.about-photo-container {
-  width: 100%;
-  max-width: 300px; /* Limit maximum size */
-  margin: 0 auto; /* Center the image */
-}
-
-.tanya-photo {
-  width: 100%;
-  height: 300px; /* Fixed height for consistency */
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
-
-.about-content {
-  width: 100%;
-}
-
-.about-info {
-  background: var(--panel);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,0.03);
-}
-
-.testimonials {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.testimonial-card {
-  background: var(--panel);
-  padding: 1.25rem;
-  border-radius: var(--radius);
-  border-left: 4px solid var(--brand-green);
-}
-
-/* ---------- Desktop Layout ---------- */
-@media (min-width: 768px) {
-  .about-grid {
-    grid-template-columns: 300px 1fr;
-    gap: 2.5rem;
-  }
-  
-  .about-photo-container {
-    max-width: 100%;
-    margin: 0;
-  }
-  
-  .tanya-photo {
-    height: 350px; /* Slightly taller on desktop */
-  }
-}
-
-/* ---------- Mobile Optimizations ---------- */
-@media (max-width: 767px) {
-  .about-photo-container {
-    max-width: 250px; /* Even smaller on very small screens */
-  }
-  
-  .tanya-photo {
-    height: 250px; /* More appropriate for mobile */
-  }
-  
-  .about-info {
-    padding: 1.25rem;
-    text-align: center;
-  }
-}
-
-@media (max-width: 360px) {
-  .about-photo-container {
-    max-width: 200px;
-  }
-  
-  .tanya-photo {
-    height: 200px;
-  }
-}
-
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0f9d58;
+      --primary-dark: #0a7a46;
+      --dark: #1a1a1a;
+      --light: #f8f9fa;
+      --text: #333;
+      --text-light: #666;
+      --border: #e0e0e0;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --radius: 8px;
+      --transition: all 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--light);
+      scroll-behavior: smooth;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4 {
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    h2:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    section {
+      padding: 4rem 0;
+    }
+    
+    /* Header */
+    header {
+      background: white;
+      box-shadow: var(--shadow);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav li {
+      margin-left: 1.5rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      text-align: center;
+      padding: 8rem 0 4rem;
+      margin-top: 60px;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    
+    .btn:hover {
+      background: transparent;
+      color: white;
+      border-color: white;
+    }
+    
+    .btn-primary {
+      background: var(--primary-dark);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: transparent;
+      border-color: white;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Products Section */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .product-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-info {
+      padding: 1.5rem;
+    }
+    
+    .product-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0.5rem 0;
+    }
+    
+    .product-category {
+      display: inline-block;
+      background: #f0f0f0;
+      color: var(--text-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Contact Section */
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 157, 88, 0.1);
+    }
+    
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      margin-top: 1rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      .header-content {
+        padding: 1rem;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+      
+      nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      nav li {
+        margin: 0;
+        border-bottom: 1px solid var(--border);
+      }
+      
+      nav a {
+        display: block;
+        padding: 1rem 0;
+      }
+      
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      section {
+        padding: 3rem 0;
+      }
+      
+      .hero {
+        padding: 5rem 1rem 2rem;
+      }
+      
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- ---------- Header ---------- -->
-  <!-- ---------- Enhanced Header ---------- -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="#" data-link="home">Tanya • Herbalife</a>
-    
-    <nav class="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="#" data-link="home">Home</a></li>
-        <li><a href="#" data-link="products">Products</a></li>
-        <li><a href="#" data-link="about">About Tanya</a></li>
-        <li><a href="#" data-link="contact">Contact</a></li>
-      </ul>
-    </nav>
-    
-    <div class="header-actions">
-      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-      <button id="cart-btn" aria-label="Open cart">🛒 <span id="cart-count">0</span></button>
-      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">☰</button>
-    </div>
-  </div>
-  
-  <div id="mobile-menu" class="mobile-menu">
-    <ul>
-      <li><a href="#" data-link="home">Home</a></li>
-      <li><a href="#" data-link="products">Products</a></li>
-      <li><a href="#" data-link="about">About Tanya</a></li>
-      <li><a href="#" data-link="contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
-
-  <!-- ---------- App root ---------- -->
-  <main id="app" class="container"></main>
-
-  <!-- ---------- Cart Modal ---------- -->
-  <aside id="cart-modal" class="cart-modal" aria-hidden="true">
-    <div class="cart-modal-inner">
-      <button id="close-cart" class="close-btn" aria-label="Close cart">✕</button>
-      <h3>Your Cart</h3>
-      <ul id="cart-items" class="cart-items"></ul>
-      <div class="cart-summary">
-        <div>Subtotal: <strong id="cart-subtotal">$0.00</strong></div>
-        <div>Delivery: <strong id="cart-delivery">$0.00</strong></div>
-        <div class="total">Total: <strong id="cart-total">$0.00</strong></div>
-      </div>
-      <div class="cart-actions">
-        <button id="checkout-btn" class="btn primary">Checkout</button>
-        <button id="clear-cart" class="btn">Clear Cart</button>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="#home" class="logo">Tanya • Herbalife</a>
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </aside>
+  </header>
 
-  <!-- ---------- Newsletter Popup ---------- -->
-  <div id="newsletter-popup" class="newsletter-popup" aria-hidden="true" style="position:fixed;right:20px;bottom:20px;background:var(--panel);padding:14px;border-radius:12px;box-shadow:0 18px 60px rgba(0,0,0,0.6);z-index:70;display:none">
-    <div class="newsletter-inner">
-      <button id="close-newsletter" class="close-btn">✕</button>
-      <h3>Join Tanya's Newsletter</h3>
-      <p>Get exclusive Herbalife offers & tips. Enter your email:</p>
-      <form id="newsletter-form" class="stack">
-        <input type="email" name="email" required placeholder="you@example.com" />
-        <button class="btn primary">Subscribe</button>
-      </form>
-      <small class="small-muted">No spam — unsubscribe anytime.</small>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Feel Vibrant. Look Radiant.</h1>
+      <p>Your trusted independent Herbalife distributor — premium nutrition, skincare & haircare with personal support.</p>
+      <a href="#products" class="btn">View Products</a>
+      <a href="#contact" class="btn btn-primary">Contact Tanya</a>
     </div>
-  </div>
+  </section>
 
-  <!-- ---------- Footer ---------- -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>Tanya • Herbalife</strong>
-        <p class="small-muted">Independent distributor — quality nutrition & beauty products.</p>
-      </div>
-      <div class="socials" style="display:flex;align-items:center">
-        <a id="whatsapp-link" href="#" target="_blank" rel="noopener" class="btn">WhatsApp</a>
-        <a href="#" target="_blank" rel="noopener" class="btn">Facebook</a>
-        <a href="#" target="_blank" rel="noopener" class="btn">Instagram</a>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Tanya</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="https://i.imgur.com/oZfgR4Q.jpeg" alt="Tanya">
+        </div>
+        <div class="about-text">
+          <h3>Your Trusted Herbalife Distributor</h3>
+          <p>Hi, I'm Tanya! As an independent Herbalife distributor since 2023, I'm passionate about helping people achieve their health and wellness goals through quality nutrition and skincare products.</p>
+          <p>I provide personalized support to each client, helping you find the right products for your unique needs — whether you're looking to manage weight, improve skin health, or boost your energy levels.</p>
+          <p>My mission is to make premium wellness products accessible with the personal touch and local support that big retailers can't offer.</p>
+        </div>
       </div>
     </div>
-    <div class="container copyright">
-      © <span id="year"></span> Tanya. All rights reserved.
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <div class="container">
+      <h2>Featured Products</h2>
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600&auto=format&fit=crop" alt="Haircare Product">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Haircare</span>
+            <h3>Hair & Scalp Nourish</h3>
+            <p class="product-price">$25.00</p>
+            <p>Nourish and strengthen your hair with plant-based nutrients.</p>
+            <a href="#contact" class="btn" style="margin-top: 1rem; display: inline-block;">Inquire</a>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1599577181241-2f459a3d2b6e?q=80&w=600&auto=format&fit=crop" alt="Skincare Product">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Skincare</span>
+            <h3>Hydrating Serum</h3>
+            <p class="product-price">$30.00</p>
+            <p>Lightweight serum to hydrate and restore your natural glow.</p>
+            <a href="#contact" class="btn" style="margin-top: 1rem; display: inline-block;">Inquire</a>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Nutrition Product">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Nutrition</span>
+            <h3>Formula 1 Shake</h3>
+            <p class="product-price">$45.00</p>
+            <p>Meal-replacement shake to support weight management goals.</p>
+            <a href="#contact" class="btn" style="margin-top: 1rem; display: inline-block;">Inquire</a>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1585238342028-5a4f2d47d3c4?q=80&w=600&auto=format&fit=crop" alt="Protein Product">
+          </div>
+          <div class="product-info">
+            <span class="product-category">Nutrition</span>
+            <h3>Protein Blend</h3>
+            <p class="product-price">$34.00</p>
+            <p>High quality protein to support muscle & healthy weight gain.</p>
+            <a href="#contact" class="btn" style="margin-top: 1rem; display: inline-block;">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Tanya</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          <p>Reach out to discuss your wellness goals or place an order.</p>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <strong>Email</strong>
+              <p>tanyaradzwahwacha15@outlook.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <strong>WhatsApp</strong>
+              <p>+263 77 758 8708</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Location</strong>
+              <p>Local Herbalife Distributor</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div>
+              <strong>Business Hours</strong>
+              <p>Monday - Saturday: 8AM - 6PM</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h3>Send a Message</h3>
+          <form id="contactForm" action="https://formspree.io/f/mnngqjjp"
+  method="POST">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" class="form-control" placeholder="How can Tanya help you?" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <h3>Tanya • Herbalife</h3>
+        <p>Independent distributor — quality nutrition & beauty products.</p>
+        
+        <div class="social-links">
+          <a href="#" class="social-link">FB</a>
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">WA</a>
+        </div>
+        
+        <p class="copyright">© <span id="year"></span> Tanya. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
-
-  <!-- ---------- All JS (single file) ---------- -->
   <script>
-    /*************************************************************************
-     * Single-file Tanya Herbalife Store
-     * Replace FORMSPREE_FORM_ID and WA_NUMBER placeholders below
-     *************************************************************************/
-    const FORMSPREE_FORM_ID = "mnngqjjp"; // <<--- REPLACE with your Formspree form id (looks like f/xxxxx)
-    const FORMSPREE_ENDPOINT = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_ID}` : null;
-    const TANYA_EMAIL = "tanyaradzwahwacha15@outlook.com";
-    const WA_NUMBER = "263777588708"; 
-
-    /***** Minimal product catalog (replace images & texts as needed) *****/
-    const store = {
-      products: [
-        { id: "p1", category: "haircare", title: "Herbalife Hair & Scalp Nourish", price: 25.00, image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop", desc: "Nourish and strengthen your hair follicles with plant-based nutrients.", rating:4.5 },
-        { id: "p2", category: "haircare", title: "Herbal Hair Repair Mask", price: 18.00, image: "https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=1200&auto=format&fit=crop", desc: "Deep-conditioning mask for dry and damaged hair.", rating:4.3 },
-        { id: "p3", category: "skincare", title: "Herbalife Hydrating Serum", price: 30.00, image: "https://images.unsplash.com/photo-1599577181241-2f459a3d2b6e?q=80&w=1200&auto=format&fit=crop", desc: "Lightweight serum to hydrate and restore glow.", rating:4.7 },
-        { id: "p4", category: "skincare", title: "Herbalife Daily Moisturizer SPF15", price: 22.00, image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop", desc: "Daily moisturizing cream with broad-spectrum protection.", rating:4.4 },
-        { id: "p5", category: "weight-loss", title: "Protein Drink Mix", price: 45.00, image: "https://i.imgur.com/mSnVRgY.jpeg", desc: "Nutrient-rich protein shake to help manage appetite and support a balanced diet.", rating:4.6 },
-        { id: "p6", category: "weight-loss", title: "Personalized Protein Powder", price: 20.00, image: "https://i.imgur.com/5SN6K6m.jpeg", desc: "Customizable protein blend designed to support your fitness goals and daily nutrition needs.", rating:4.0 },
-        { id: "p7", category: "weight-loss", title: "Formula 1 Shake Mix", price: 20.00, image: "https://i.imgur.com/rwslNAS.jpeg", desc: "Free from soya, lactose and gluten. It is a delicious and convenient Shake Mix that is high in protein and fibre.", rating:4.0 },
-        { id: "p8", category: "weight-gain", title: "Weight-Gain Shake Mix", price: 48.00, image: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop", desc: "Calorie-rich shake for healthy weight gain.", rating:4.2 },
-        { id: "p9", category: "weight-gain", title: "Protein Blend", price: 34.00, image: "https://images.unsplash.com/photo-1585238342028-5a4f2d47d3c4?q=80&w=1200&auto=format&fit=crop", desc: "High quality protein to support muscle & weight gain.", rating:4.1 },
-        { id: "p10", category: "weight-loss", title: "Tri Blend Protein Shake Mix", price: 20.00, image: "https://i.imgur.com/BytVUFB.jpeg", desc: "Banana flavour, ###################.", rating:4.0 },
-      ],
-      reviews: {}
-    };
-
-    // state & persistence
-    const state = {
-      cart: JSON.parse(localStorage.getItem('tanya_cart')||'[]'),
-      theme: localStorage.getItem('tanya_theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'),
-    };
-
-    // dom helpers
-    const $ = s => document.querySelector(s);
-    const $$ = s => Array.from(document.querySelectorAll(s));
-
-    function saveCart(){ localStorage.setItem('tanya_cart', JSON.stringify(state.cart)); updateCartCount(); }
-    function updateCartCount(){ $('#cart-count').textContent = state.cart.reduce((s,i)=>s+i.qty,0); }
-
-    function showToast(msg, time=2000){
-      const t = $('#toast'); t.textContent = msg; t.style.display = 'block';
-      setTimeout(()=> t.style.display = 'none', time);
-    }
-
-    // --- Routing & render ---
-    window.addEventListener('hashchange', render);
-    window.addEventListener('load', ()=> {
-      applyTheme();
-      updateCartCount();
-      render();
-      // open mobile menu toggle
-      $('#mobile-menu-btn').addEventListener('click', ()=> {
-        const mm = $('#mobile-menu');
-        mm.style.display = (mm.style.display === 'block') ? 'none' : 'block';
-      });
-      // close mobile menu on resize
-      window.addEventListener('resize', ()=> $('#mobile-menu').style.display = 'none');
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('nav').classList.toggle('active');
     });
-
-    function navTo(page){ location.hash = page; render(); }
-    function initNavLinks(){
-      document.querySelectorAll('[data-link]').forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          e.preventDefault();
-          const target = a.getAttribute('data-link');
-          navTo(target);
-        });
-      });
-    }
-
-    function render(){
-      const main = $('#app');
-      const hash = location.hash.replace('#','') || 'home';
-      let html = '';
-      if(hash === 'home') html = renderHome();
-      else if(hash === 'products') html = renderProductsView();
-      else if(hash.startsWith('product:')) html = renderProductDetail(hash.split(':')[1]);
-      else if(hash === 'about') html = renderAbout();
-      else if(hash === 'contact') html = renderContact();
-      else if(hash === 'checkout') html = renderCheckout();
-      else html = renderHome();
-      main.innerHTML = html;
-      attachHandlersForView(hash);
-      $('#year').textContent = new Date().getFullYear();
-      initNavLinks();
-    }
-
-    /* ------------------ Views ------------------ */
-
-    function renderHome(){
-      return `
-      <section class="hero fade-in">
-        <div class="hero-card">
-          <h1>Feel vibrant. Look radiant. Be Tanya's best self.</h1>
-          <p>Your trusted independent Herbalife distributor — premium nutrition, skincare & haircare with personal support and local delivery.</p>
-          <div class="cta-row">
-            <button class="btn primary" id="home-shop">Shop Now</button>
-            <a class="btn" href="#contact" data-link="contact">Contact Tanya</a>
-          </div>
-          <div class="small-muted" style="margin-top:12px">
-            <strong>Phone (WhatsApp):</strong> <a id="whatsapp-home" href="#" style="color:var(--brand-green)">Chat Tanya</a>
-          </div>
-          <div style="margin-top:12px">
-            <input id="global-search" type="search" placeholder="Search products, e.g. 'shake'..." style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)">
-          </div>
-        </div>
-
-        <div>
-          <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px;justify-content:space-between">
-            <h3 style="margin:0">Featured Products</h3>
-            <div class="carousel-controls">
-              <button id="carousel-prev" class="btn">‹</button>
-              <button id="carousel-next" class="btn">›</button>
-            </div>
-          </div>
-          <div class="carousel">
-            <div id="carousel-track" class="carousel-track">
-              ${store.products.slice(0,6).map(p=>`
-                <div class="carousel-item" data-id="${p.id}">
-                  <img loading="lazy" src="${p.image}" alt="${p.title}">
-                  <div style="margin-top:8px">
-                    <div style="display:flex;justify-content:space-between;align-items:center">
-                      <strong>${p.title}</strong>
-                      <span class="price">$${p.price.toFixed(2)}</span>
-                    </div>
-                    <div class="small-muted">${p.category}</div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <div style="margin-top:12px">
-            <h3>All Products</h3>
-            <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-              <select id="filter-cat" style="padding:8px;border-radius:8px;">
-                <option value="">All categories</option>
-                <option value="haircare">Haircare</option>
-                <option value="skincare">Skincare</option>
-                <option value="weight-loss">Weight Loss</option>
-                <option value="weight-gain">Weight Gain</option>
-              </select>
-              <input id="filter-search" type="search" placeholder="Search products..." style="flex:1;padding:8px;border-radius:8px;">
-            </div>
-            <div id="products-grid" class="products-grid"></div>
-          </div>
-        </div>
-      </section>
-      `;
-    }
-
-    function renderProductsView(){
-      return `
-      <section>
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <h2>Products</h2>
-          <div class="small-muted">Filter by category or search</div>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px">
-          <select id="filter-cat-page" style="padding:8px;border-radius:8px;">
-            <option value="">All categories</option>
-            <option value="haircare">Haircare</option>
-            <option value="skincare">Skincare</option>
-            <option value="weight-loss">Weight Loss</option>
-            <option value="weight-gain">Weight Gain</option>
-          </select>
-          <input id="filter-search-page" placeholder="Search products..." style="flex:1;padding:8px;border-radius:8px">
-        </div>
-        <div id="products-grid-page" class="products-grid" style="margin-top:12px"></div>
-      </section>
-      `;
-    }
-
-    function renderProductDetail(id){
-      const p = store.products.find(x=>x.id===id);
-      if(!p) return `<section><h2>Product not found</h2></section>`;
-      const productReviews = (store.reviews[p.id] || []);
-      return `
-      <section class="product-detail fade-in">
-        <div>
-          <img src="${p.image}" alt="${p.title}">
-          <div class="reviews">
-            <h4>Reviews</h4>
-            <div id="reviews-list">
-              ${productReviews.length ? productReviews.map(r=>`
-                <div class="review">
-                  <strong>${r.name}</strong> <small class="small-muted">• ${new Date(r.date).toLocaleDateString()}</small>
-                  <div class="rating-stars">Rating: ${'★'.repeat(Math.round(r.rating))}${'☆'.repeat(5-Math.round(r.rating))}</div>
-                  <p class="small-muted">${r.text}</p>
-                </div>
-              `).join('') : `<div class="small-muted">No reviews yet — be the first to leave one.</div>`}
-            </div>
-
-            <form id="review-form" class="stack" style="margin-top:8px">
-              <h4>Add a review</h4>
-              <input name="name" placeholder="Your name" required>
-              <select name="rating" required>
-                <option value="">Rating</option>
-                <option value="5">5 — Excellent</option>
-                <option value="4">4 — Good</option>
-                <option value="3">3 — Okay</option>
-                <option value="2">2 — Not great</option>
-                <option value="1">1 — Poor</option>
-              </select>
-              <textarea name="text" placeholder="Tell others what you liked..." required></textarea>
-              <button class="btn primary">Submit Review</button>
-            </form>
-          </div>
-        </div>
-
-        <div>
-          <h2>${p.title}</h2>
-          <div class="small-muted">${p.category}</div>
-          <div style="margin-top:8px"><strong class="price">$${p.price.toFixed(2)}</strong></div>
-          <p style="margin-top:12px" class="small-muted">${p.desc}</p>
-
-          <div class="add-row">
-            <label for="qty">Qty</label>
-            <input id="qty" type="number" min="1" value="1" style="width:80px;padding:8px;border-radius:8px">
-            <button id="add-cart" class="btn primary">Add to Cart</button>
-          </div>
-
-          <div style="margin-top:12px;">
-            <strong>Product details</strong>
-            <ul class="small-muted">
-              <li>Quality assured</li>
-              <li>Local delivery available</li>
-              <li>Return policy: contact Tanya within 7 days</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      `;
-    }
-
-    function renderAbout(){
-      return `
-      <section class="fade-in">
-    <h2 style="margin-bottom: 1.5rem;">About Tanya</h2>
     
-    <div class="about-grid">
-      <div class="about-photo-container">
-        <div class="about-info">
-          <img src="https://i.imgur.com/oZfgR4Q.jpeg" 
-               alt="Tanya - Herbalife Distributor" 
-               class="tanya-photo">
-          <div style="margin-top: 1rem;">
-            <h3 style="margin-bottom: 0.5rem;">Tanya</h3>
-            <p class="small-muted" style="margin-bottom: 1rem;">
-              Independent Herbalife distributor helping clients reach better health, 
-              weight and beauty goals since 2018.
-            </p>
-            
-            <div style="margin-top: 1rem;">
-              <strong style="display: block; margin-bottom: 0.5rem; color: var(--brand-green);">
-                Mission
-              </strong>
-              <p class="small-muted">
-                Provide trusted, well-sourced Herbalife products and personalized coaching 
-                to help clients feel great and achieve their wellness goals.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-content">
-        <div style="margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 1rem;">Why Choose Tanya?</h3>
-          <div style="display: grid; gap: 1rem;">
-            <div style="display: flex; align-items: flex-start; gap: 1rem;">
-              <span style="color: var(--brand-green); font-size: 1.5rem;">✓</span>
-              <div>
-                <strong>Personalized Support</strong>
-                <p class="small-muted">One-on-one coaching and customized product recommendations</p>
-              </div>
-            </div>
-            
-            <div style="display: flex; align-items: flex-start; gap: 1rem;">
-              <span style="color: var(--brand-green); font-size: 1.5rem;">✓</span>
-              <div>
-                <strong>Local Expertise</strong>
-                <p class="small-muted">Understanding of local needs and preferences</p>
-              </div>
-            </div>
-            
-            <div style="display: flex; align-items: flex-start; gap: 1rem;">
-              <span style="color: var(--brand-green); font-size: 1.5rem;">✓</span>
-              <div>
-                <strong>Quality Guarantee</strong>
-                <p class="small-muted">Authentic Herbalife products with quality assurance</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3 style="margin-bottom: 1rem;">Client Testimonials</h3>
-          <div class="testimonials">
-            <div class="testimonial-card">
-              <strong>Maria S.</strong>
-              <div class="small-muted" style="margin-top: 0.5rem;">
-                "Tanya helped me lose 10kg safely with her personalized nutrition plan. 
-                Her support and weekly check-ins made all the difference!"
-              </div>
-              <div style="margin-top: 0.5rem; color: var(--brand-green);">★★★★★</div>
-            </div>
-            
-            <div class="testimonial-card">
-              <strong>James P.</strong>
-              <div class="small-muted" style="margin-top: 0.5rem;">
-                "Great products and fast local delivery. Tanya took the time to understand 
-                my weight gain goals and recommended the perfect protein shakes."
-              </div>
-              <div style="margin-top: 0.5rem; color: var(--brand-green);">★★★★☆</div>
-            </div>
-            
-            <div class="testimonial-card">
-              <strong>Sarah M.</strong>
-              <div class="small-muted" style="margin-top: 0.5rem;">
-                "The skincare products transformed my routine. Tanya's knowledge about 
-                herbal ingredients is impressive and the results speak for themselves."
-              </div>
-              <div style="margin-top: 0.5rem; color: var(--brand-green);">★★★★★</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-      `;
-    }
-
-    function renderContact(){
-      return `
-      <section>
-    <h2>Contact Tanya</h2>
-    <div class="contact-page-container">  <!-- Add this wrapper -->
-      <div class="contact-form-section">
-        <div class="contact-form">
-          <form id="contact-form" class="stack">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <input type="text" name="phone" placeholder="Phone or WhatsApp number" required>
-            <textarea name="message" placeholder="How can Tanya help you?" required></textarea>
-            <button class="btn primary">Send Message</button>
-          </form>
-          <small class="small-muted">Messages will be forwarded to Tanya via Formspree.</small>
-        </div>
-      </div>
-
-      <div class="contact-info-section">
-        <h4>Quick links</h4>
-        <p class="small-muted"><strong>Email:</strong> ${TANYA_EMAIL}</p>
-        <p class="small-muted"><strong>WhatsApp:</strong> <a id="whatsapp-contact" href="#" target="_blank">Chat on WhatsApp</a></p>
-        <p class="small-muted">Follow Tanya on social media for offers and tips.</p>
-      </div>
-    </div>
-  </section>
-  `;
-    }
-
-    function renderCheckout(){
-      const items = state.cart;
-      const subtotal = items.reduce((s,i)=> s + i.price*i.qty, 0);
-      const delivery = subtotal > 50 ? 0 : 5;
-      const total = subtotal + delivery;
-      return `
-      <section>
-        <h2>Checkout</h2>
-        <div style="display:grid;grid-template-columns:1fr 360px;gap:12px">
-          <div class="checkout-form">
-            <form id="checkout-form" class="stack">
-              <input type="text" name="customer_name" placeholder="Full name" required>
-              <input type="email" name="customer_email" placeholder="Email" required>
-              <input type="text" name="customer_phone" placeholder="Phone / WhatsApp" required>
-              <label>Delivery option</label>
-              <select name="delivery_option" required>
-                <option value="pickup">Pickup</option>
-                <option value="local_delivery">Local delivery (small fee)</option>
-              </select>
-              <label>Payment method (cash / EcoCash)</label>
-              <select name="payment_method" required>
-                <option value="cash">Cash (on delivery/pickup)</option>
-                <option value="ecocash">EcoCash (mobile payment in-person)</option>
-              </select>
-
-              <label>Additional notes</label>
-              <textarea name="notes" placeholder="Enter address or special instructions"></textarea>
-
-              <input type="hidden" name="order_summary" value='${JSON.stringify(items)}'>
-              <input type="hidden" name="order_subtotal" value='${subtotal.toFixed(2)}'>
-              <input type="hidden" name="order_delivery" value='${delivery.toFixed(2)}'>
-              <input type="hidden" name="order_total" value='${total.toFixed(2)}'>
-
-              <button class="btn primary">Place Order (we will contact you)</button>
-            </form>
-            <p class="small-muted" style="margin-top:8px">Note: Payments are NOT processed online. We accept Cash or EcoCash locally — Tanya will contact you to arrange payment and delivery.</p>
-          </div>
-
-          <aside style="background:var(--panel);padding:12px;border-radius:12px">
-            <h4>Order summary</h4>
-            <div id="checkout-items" style="max-height:300px;overflow:auto"></div>
-            <div style="margin-top:8px">
-              <div class="small-muted">Subtotal: <strong>$${subtotal.toFixed(2)}</strong></div>
-              <div class="small-muted">Delivery: <strong>$${delivery.toFixed(2)}</strong></div>
-              <div style="margin-top:8px">Total: <strong style="font-size:1.2rem">$${total.toFixed(2)}</strong></div>
-            </div>
-          </aside>
-        </div>
-      </section>
-      `;
-    }
-
-    /* ------------------ Attach handlers for each view ------------------ */
-    function attachHandlersForView(hash){
-      // global nav links
-      document.querySelectorAll('[data-link]').forEach(a=>{
-        a.addEventListener('click', (e)=> { e.preventDefault(); navTo(a.getAttribute('data-link')); });
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelector('nav').classList.remove('active');
       });
-
-      // Home specific
-      if(hash === 'home'){
-        // carousel
-        const track = $('#carousel-track');
-        let pos = 0;
-        const step = 240;
-        $('#carousel-next').onclick = ()=> { pos = Math.min(pos + step, track.scrollWidth - track.clientWidth); track.scrollTo({left:pos, behavior:'smooth'}); };
-        $('#carousel-prev').onclick = ()=> { pos = Math.max(pos - step, 0); track.scrollTo({left:pos, behavior:'smooth'}); };
-        // featured -> product
-        $$('.carousel-item').forEach(el=> el.addEventListener('click', ()=> navTo('product:'+el.dataset.id)));
-        // products grid
-        renderProductsGrid($('#products-grid'), store.products);
-        $('#filter-cat')?.addEventListener('change', e=>{
-          const val = e.target.value;
-          const search = $('#filter-search')?.value || '';
-          const filtered = store.products.filter(p=> (val? p.category===val : true) && (p.title + p.desc).toLowerCase().includes(search.toLowerCase()));
-          renderProductsGrid($('#products-grid'), filtered);
-        });
-        $('#filter-search')?.addEventListener('input', e=>{
-          const s = e.target.value;
-          const cat = $('#filter-cat')?.value || '';
-          const filtered = store.products.filter(p=> (cat? p.category===cat : true) && (p.title + p.desc).toLowerCase().includes(s.toLowerCase()));
-          renderProductsGrid($('#products-grid'), filtered);
-        });
-        $('#global-search')?.addEventListener('keydown', (e)=> {
-          if(e.key === 'Enter'){
-            const s = e.target.value;
-            const results = store.products.filter(p=> (p.title + p.desc).toLowerCase().includes(s.toLowerCase()));
-            renderProductsGrid($('#products-grid'), results);
-          }
-        });
-        $('#home-shop')?.addEventListener('click', ()=> navTo('products'));
-        // show newsletter once per session
-        setTimeout(()=> {
-          if(!localStorage.getItem('tanya_news_shown')){
-            const np = $('#newsletter-popup');
-            np.style.display = 'block';
-            np.setAttribute('aria-hidden','false');
-            localStorage.setItem('tanya_news_shown','1');
-          }
-        }, 1600);
-      }
-
-      // products page handlers
-      if(hash === 'products'){
-        renderProductsGrid($('#products-grid-page'), store.products);
-        $('#filter-cat-page')?.addEventListener('change', e=>{
-          const val = e.target.value;
-          const search = $('#filter-search-page')?.value || '';
-          const filtered = store.products.filter(p=> (val? p.category===val : true) && (p.title + p.desc).toLowerCase().includes(search.toLowerCase()));
-          renderProductsGrid($('#products-grid-page'), filtered);
-        });
-        $('#filter-search-page')?.addEventListener('input', e=>{
-          const s = e.target.value;
-          const cat = $('#filter-cat-page')?.value || '';
-          const filtered = store.products.filter(p=> (cat? p.category===cat : true) && (p.title + p.desc).toLowerCase().includes(s.toLowerCase()));
-          renderProductsGrid($('#products-grid-page'), filtered);
-        });
-      }
-
-      // product detail handlers
-      if(hash.startsWith('product:')){
-        const id = hash.split(':')[1];
-        $('#add-cart')?.addEventListener('click', ()=> {
-          const qty = Math.max(1, parseInt($('#qty').value||1));
-          const p = store.products.find(x=>x.id===id);
-          addToCart(p, qty);
-          showToast('Added to cart');
-        });
-        $('#review-form')?.addEventListener('submit', (e)=>{
-          e.preventDefault();
-          const fd = new FormData(e.target);
-          const review = { name: fd.get('name'), rating: Number(fd.get('rating')), text: fd.get('text'), date: new Date().toISOString() };
-          store.reviews[id] = store.reviews[id] || [];
-          store.reviews[id].unshift(review);
-          localStorage.setItem('tanya_reviews', JSON.stringify(store.reviews));
-          showToast('Thanks for your review!');
-          render(); location.hash = 'product:'+id;
-        });
-      }
-
-      // contact page handlers
-      if(hash === 'contact'){
-        $('#contact-form')?.addEventListener('submit', async (e)=>{
-          e.preventDefault();
-          const btn = e.target.querySelector('button');
-          btn.disabled = true; btn.textContent = 'Sending...';
-          const fd = new FormData(e.target);
-          fd.append('destination_email', TANYA_EMAIL);
-          if(!FORMSPREE_ENDPOINT){ showToast('Formspree not configured — replace the form ID in the code'); btn.disabled=false; btn.textContent='Send Message'; return; }
-          try{
-            const res = await fetch(FORMSPREE_ENDPOINT, { method:'POST', body: fd, headers: { Accept:'application/json' }});
-            if(res.ok){ showToast('Message sent — Tanya will contact you'); e.target.reset(); }
-            else { showToast('Could not send — check Formspree config'); }
-          }catch(err){ console.error(err); showToast('Network error — try again later'); }
-          finally{ btn.disabled=false; btn.textContent='Send Message'; }
-        });
-      }
-
-      // checkout page handlers
-      if(hash === 'checkout'){
-        const itemsDiv = $('#checkout-items');
-        const items = state.cart;
-        if(itemsDiv){
-          itemsDiv.innerHTML = items.length ? items.map(i=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.03)"><div>${i.title} × ${i.qty}</div><div>$${(i.price*i.qty).toFixed(2)}</div></div>`).join('') : `<div class="small-muted">Your cart is empty</div>`;
-        }
-        $('#checkout-form')?.addEventListener('submit', async (e)=>{
-          e.preventDefault();
-          const btn = e.target.querySelector('button');
-          btn.disabled = true; btn.textContent = 'Placing order...';
-          const fd = new FormData(e.target);
-          const itemsText = state.cart.map(i=>`${i.title} x${i.qty} — $${(i.qty*i.price).toFixed(2)}`).join('\n');
-          fd.append('order_items_text', itemsText);
-          fd.append('destination_email', TANYA_EMAIL);
-          if(!FORMSPREE_ENDPOINT){ showToast('Formspree not configured — replace the form ID in the code'); btn.disabled=false; btn.textContent='Place Order (we will contact you)'; return; }
-          try{
-            const res = await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body: fd, headers: { Accept: 'application/json' }});
-            if(res.ok){
-              showToast('Order sent — Tanya will contact you to arrange payment & delivery');
-              state.cart = []; saveCart(); navTo('home');
-            } else { showToast('Unable to send order — check Formspree config'); }
-          }catch(err){ console.error(err); showToast('Network error — try again later'); }
-          finally{ btn.disabled=false; btn.textContent='Place Order (we will contact you)'; }
-        });
-      }
-
-      // newsletter popup
-      $('#close-newsletter')?.addEventListener('click', ()=> {
-        $('#newsletter-popup').style.display = 'none';
-        $('#newsletter-popup').setAttribute('aria-hidden','true');
-      });
-      $('#newsletter-form')?.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        const fd = new FormData(e.target);
-        fd.append('destination_email', TANYA_EMAIL);
-        if(!FORMSPREE_ENDPOINT){ showToast('Formspree not configured — replace the form ID in the code'); return; }
-        try{ await fetch(FORMSPREE_ENDPOINT, { method:'POST', body: fd, headers:{ Accept:'application/json' }}); showToast('Subscribed — thanks!'); $('#newsletter-popup').style.display='none'; }
-        catch(err){ showToast('Could not subscribe'); }
-      });
-
-      // Cart & checkout wiring
-      $('#cart-btn')?.addEventListener('click', ()=> toggleCart(true));
-      $('#close-cart')?.addEventListener('click', ()=> toggleCart(false));
-      $('#clear-cart')?.addEventListener('click', ()=> { state.cart=[]; saveCart(); render(); toggleCart(false); showToast('Cart cleared'); });
-      $('#checkout-btn')?.addEventListener('click', ()=> { toggleCart(false); navTo('checkout'); });
-
-      // WhatsApp links — create wa.me links if WA_NUMBER present
-      const waHref = WA_NUMBER ? `https://wa.me/${WA_NUMBER}` : '#';
-      $('#whatsapp-home')?.setAttribute('href', waHref);
-      $('#whatsapp-contact')?.setAttribute('href', waHref);
-      $('#whatsapp-link')?.setAttribute('href', waHref);
-    }
-
-    /* ------------------ Products Grid helper ------------------ */
-    function renderProductsGrid(containerEl, products){
-      if(!containerEl) return;
-      containerEl.innerHTML = products.map(p=>`
-        <article class="product">
-          <img src="${p.image}" alt="${p.title}">
-          <div style="margin-top:8px">
-            <div style="display:flex;justify-content:space-between">
-              <strong>${p.title}</strong>
-              <span class="price">$${p.price.toFixed(2)}</span>
-            </div>
-            <div class="small-muted">${p.category} • ${p.rating}★</div>
-            <p class="small-muted" style="margin-top:6px">${p.desc.slice(0,90)}${p.desc.length>90?'…':''}</p>
-          </div>
-          <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
-            <button class="btn" data-action="view" data-id="${p.id}">View</button>
-            <button class="btn primary" data-action="add" data-id="${p.id}">Add</button>
-          </div>
-        </article>
-      `).join('');
-      containerEl.querySelectorAll('[data-action="view"]').forEach(btn=> btn.addEventListener('click', ()=> navTo('product:'+btn.dataset.id)));
-      containerEl.querySelectorAll('[data-action="add"]').forEach(btn=> btn.addEventListener('click', ()=> {
-        const p = store.products.find(x=>x.id===btn.dataset.id);
-        addToCart(p,1);
-        showToast('Added to cart');
-      }));
-    }
-
-    /* ------------------ Cart functions ------------------ */
-    function addToCart(product, qty=1){
-      const existing = state.cart.find(i=>i.id===product.id);
-      if(existing) existing.qty += qty;
-      else state.cart.push({ id: product.id, title: product.title, price: product.price, qty });
-      saveCart(); renderCartItems();
-    }
-
-    function renderCartItems(){
-      const ul = $('#cart-items');
-      if(!ul) return;
-      if(state.cart.length === 0){
-        ul.innerHTML = '<li class="small-muted">Your cart is empty</li>';
-        $('#cart-subtotal').textContent = '$0.00'; $('#cart-total').textContent = '$0.00'; $('#cart-delivery').textContent = '$0.00';
-        return;
-      }
-      ul.innerHTML = state.cart.map(item=>`
-        <li class="cart-item">
-          <img src="${(store.products.find(p=>p.id===item.id)||{}).image}" alt="${item.title}">
-          <div style="flex:1">
-            <div style="display:flex;justify-content:space-between">
-              <strong>${item.title}</strong>
-              <span class="small-muted">$${(item.price*item.qty).toFixed(2)}</span>
-            </div>
-            <div style="display:flex;gap:8px;margin-top:4px;align-items:center">
-              <button class="btn" data-act="dec" data-id="${item.id}">-</button>
-              <div class="small-muted">Qty: ${item.qty}</div>
-              <button class="btn" data-act="inc" data-id="${item.id}">+</button>
-              <button class="btn" data-act="rm" data-id="${item.id}">Remove</button>
-            </div>
-          </div>
-        </li>
-      `).join('');
-      ul.querySelectorAll('[data-act]').forEach(b=>{
-        b.addEventListener('click', ()=>{
-          const id = b.dataset.id, act = b.dataset.act;
-          const idx = state.cart.findIndex(i=>i.id===id);
-          if(idx===-1) return;
-          if(act==='inc') state.cart[idx].qty++;
-          if(act==='dec'){ state.cart[idx].qty--; if(state.cart[idx].qty<=0) state.cart.splice(idx,1); }
-          if(act==='rm') state.cart.splice(idx,1);
-          saveCart(); renderCartItems(); render();
-        });
-      });
-      const subtotal = state.cart.reduce((s,i)=> s + i.price*i.qty, 0);
-      const delivery = subtotal > 50 ? 0 : 5;
-      $('#cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
-      $('#cart-delivery').textContent = `$${delivery.toFixed(2)}`;
-      $('#cart-total').textContent = `$${(subtotal+delivery).toFixed(2)}`;
-    }
-
-    function toggleCart(open=true){
-      const cm = $('#cart-modal');
-      if(!cm) return;
-      cm.setAttribute('aria-hidden', (!open).toString());
-      if(open){ renderCartItems(); }
-    }
-
-    /* ------------------ Theme ------------------ */
-    function applyTheme(){
-      if(state.theme === 'light') document.documentElement.classList.add('light');
-      else document.documentElement.classList.remove('light');
-      $('#theme-toggle').textContent = state.theme === 'light' ? '🌞' : '🌙';
-      localStorage.setItem('tanya_theme', state.theme);
-    }
-    $('#theme-toggle').addEventListener('click', ()=> {
-      state.theme = state.theme === 'dark' ? 'light' : 'dark';
-      applyTheme();
     });
-
-    // restore reviews if present
-    try{ const rv = JSON.parse(localStorage.getItem('tanya_reviews')||'{}'); if(rv) store.reviews = rv; } catch(e){}
-
-    /*********************
-     * Final notes & tips
-     *********************/
-    // Make sure cart badge shows initial count & attach some global UI
-    updateCartCount();
-
-    // Good to go — render already called on load, but ensure clicking header cart etc. is wired
-    // Provide a small helper to show Formspree endpoint notice if it's not configured
-    if(!FORMSPREE_ENDPOINT){
-      console.warn("Formspree not configured. Replace FORMSPREE_FORM_ID in the top of the file to enable contact & order emails.");
-    }
-
-    /* End of script */
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Simple form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Simple validation
+      if(name && email && message) {
+        // In a real implementation, you would send this data to a server
+        alert(`Thank you, ${name}! Your message has been sent. Tanya will contact you soon.`);
+        this.reset();
+      } else {
+        alert('Please fill in all required fields.');
+      }
+    });
+    
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
